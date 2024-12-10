@@ -25,7 +25,7 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<UserDto> login(@RequestBody SignUpDto signUpDto){
+    public ResponseEntity<UserDto> register(@RequestBody SignUpDto signUpDto){
         UserDto user = userService.register(signUpDto);
         return ResponseEntity.created(URI.create("/users/" + user.getId())).body(user);
     }
